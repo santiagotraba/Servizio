@@ -9,6 +9,23 @@
     "start": "react-native start",
     "test": "jest"
   },
+  "jest": {
+    "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|@react-native|@react-navigation|react-native-vector-icons)/)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-navigation/bottom-tabs": "^7.3.14",
@@ -32,6 +49,7 @@
     "@react-native/eslint-config": "0.79.3",
     "@react-native/metro-config": "0.79.3",
     "@react-native/typescript-config": "0.79.3",
+    "@testing-library/react-native": "^13.2.2",
     "@types/jest": "^29.5.13",
     "@types/react": "^19.0.0",
     "@types/react-test-renderer": "^19.0.0",
