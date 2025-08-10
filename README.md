@@ -1,97 +1,250 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Serviz.io - Aplicación Móvil de Servicios
 
-# Getting Started
+Una aplicación móvil nativa desarrollada con React Native que conecta usuarios con proveedores de servicios profesionales de confianza.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🚀 Características
 
-## Step 1: Start Metro
+### Funcionalidades Implementadas (Sprint 1)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+#### Autenticación y Usuarios
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- ✅ Sistema de login con autenticación local (mock)
+- ✅ Soporte para usuarios cliente y negocio
+- ✅ Persistencia de sesión con AsyncStorage
+- ✅ Perfil de usuario con estadísticas
 
-```sh
-# Using npm
-npm start
+#### Navegación y UI
 
-# OR using Yarn
-yarn start
+- ✅ Navegación completa con React Navigation
+- ✅ Navegación por pestañas (Home, Servicios, Perfil)
+- ✅ Navegación por stack para pantallas específicas
+- ✅ Diseño responsive y moderno
+
+#### Gestión de Servicios
+
+- ✅ Catálogo de categorías de servicios
+- ✅ Búsqueda y filtrado de servicios
+- ✅ Perfiles detallados de negocios
+- ✅ Contratación de servicios
+- ✅ Seguimiento en tiempo real del servicio
+- ✅ Sistema de valoraciones y feedback
+
+#### Pantallas Implementadas
+
+1. **Login** - Autenticación de usuarios
+2. **Home** - Pantalla principal con categorías y servicios recientes
+3. **Profile** - Perfil de usuario con opciones
+4. **ServiceSelection** - Selección y filtrado de servicios
+5. **BusinessProfile** - Perfil detallado del negocio
+6. **ServiceHired** - Detalle del servicio contratado
+7. **Delivery** - Seguimiento del servicio en tiempo real
+8. **Help** - Sistema de ayuda y soporte
+9. **ServiceClosure** - Cierre y confirmación del servicio
+10. **ServiceFeedback** - Valoración y opiniones
+
+## 🛠️ Tecnologías Utilizadas
+
+- **React Native** - Framework principal
+- **TypeScript** - Tipado estático
+- **React Navigation** - Navegación entre pantallas
+- **Context API** - Gestión de estado global
+- **AsyncStorage** - Persistencia local de datos
+
+## 📱 Instalación y Configuración
+
+### Prerrequisitos
+
+- Node.js (versión 18 o superior)
+- npm o yarn
+- React Native CLI
+- Android Studio (para Android)
+- Xcode (para iOS, solo macOS)
+
+### Instalación
+
+1. **Clonar el repositorio**
+
+```bash
+git clone <url-del-repositorio>
+cd Servizio
 ```
 
-## Step 2: Build and run your app
+2. **Instalar dependencias**
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```bash
+npm install
 ```
 
-### iOS
+3. **Instalar dependencias de iOS (solo macOS)**
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+cd ios && pod install && cd ..
 ```
 
-Then, and every time you update your native dependencies, run:
+4. **Ejecutar la aplicación**
 
-```sh
-bundle exec pod install
+Para Android:
+
+```bash
+npx react-native run-android
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Para iOS:
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```bash
+npx react-native run-ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🔐 Credenciales de Prueba
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+### Usuario Cliente
 
-## Step 3: Modify your app
+- **Email:** juan@example.com
+- **Contraseña:** 123456
 
-Now that you have successfully run the app, let's make changes!
+### Usuario Negocio
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+- **Email:** maria@example.com
+- **Contraseña:** 123456
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 📁 Estructura del Proyecto
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+```
+src/
+├── components/          # Componentes reutilizables
+│   ├── Button.tsx      # Botón personalizado
+│   ├── Input.tsx       # Campo de entrada
+│   └── ServiceCard.tsx # Tarjeta de servicio
+├── context/            # Contextos de React
+│   └── AuthContext.tsx # Contexto de autenticación
+├── navigation/         # Configuración de navegación
+│   └── AppNavigator.tsx
+├── screens/           # Pantallas de la aplicación
+│   ├── LoginScreen.tsx
+│   ├── HomeScreen.tsx
+│   ├── ProfileScreen.tsx
+│   ├── ServiceSelectionScreen.tsx
+│   ├── BusinessProfileScreen.tsx
+│   ├── ServiceHiredScreen.tsx
+│   ├── DeliveryScreen.tsx
+│   ├── HelpScreen.tsx
+│   ├── ServiceClosureScreen.tsx
+│   └── ServiceFeedbackScreen.tsx
+├── types/             # Definiciones de tipos TypeScript
+│   └── index.ts
+└── utils/             # Utilidades y datos mock
+    └── mockData.ts
+```
 
-## Congratulations! :tada:
+## 🎨 Diseño y UX
 
-You've successfully run and modified your React Native App. :partying_face:
+### Paleta de Colores
 
-### Now what?
+- **Primario:** #007AFF (Azul iOS)
+- **Secundario:** #34C759 (Verde éxito)
+- **Peligro:** #FF3B30 (Rojo error)
+- **Fondo:** #F8F9FA (Gris claro)
+- **Texto:** #1C1C1E (Negro)
+- **Texto secundario:** #8E8E93 (Gris)
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+### Componentes Reutilizables
 
-# Troubleshooting
+- **Button:** Botón con múltiples variantes (primary, secondary, outline, danger)
+- **Input:** Campo de entrada con validación y estados
+- **ServiceCard:** Tarjeta para mostrar servicios
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## 🔄 Flujo de Usuario
 
-# Learn More
+1. **Login** → Usuario se autentica
+2. **Home** → Ve categorías y servicios recientes
+3. **ServiceSelection** → Busca y filtra servicios
+4. **BusinessProfile** → Ve detalles del negocio
+5. **ServiceHired** → Confirma contratación
+6. **Delivery** → Sigue el progreso del servicio
+7. **ServiceClosure** → Confirma finalización
+8. **ServiceFeedback** → Valora el servicio
 
-To learn more about React Native, take a look at the following resources:
+## 🚧 Próximas Funcionalidades
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### Sprint 2 (Próximamente)
+
+- [ ] Integración con APIs reales
+- [ ] Sistema de pagos
+- [ ] Notificaciones push
+- [ ] Chat en tiempo real
+- [ ] Geolocalización
+- [ ] Sistema de citas
+- [ ] Historial completo
+- [ ] Configuraciones avanzadas
+
+### Sprint 3 (Futuro)
+
+- [ ] Autenticación con Google/Facebook
+- [ ] Modo offline
+- [ ] Análisis y métricas
+- [ ] Sistema de recompensas
+- [ ] Integración con calendario
+- [ ] Exportación de datos
+
+## 🐛 Solución de Problemas
+
+### Errores Comunes
+
+1. **Error de Metro Bundler**
+
+```bash
+npx react-native start --reset-cache
+```
+
+2. **Error de dependencias iOS**
+
+```bash
+cd ios && pod install && cd ..
+```
+
+3. **Error de Android**
+
+```bash
+cd android && ./gradlew clean && cd ..
+```
+
+## 📝 Notas de Desarrollo
+
+### Estado de la Aplicación
+
+- **Autenticación:** Mock local (sin backend)
+- **Datos:** Mock data en `src/utils/mockData.ts`
+- **Navegación:** React Navigation v6
+- **Estado:** Context API (preparado para Redux)
+
+### Preparado para Producción
+
+- ✅ Estructura modular y escalable
+- ✅ Tipos TypeScript completos
+- ✅ Componentes reutilizables
+- ✅ Navegación robusta
+- ✅ Gestión de estado centralizada
+- ✅ Estilos consistentes
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 📞 Soporte
+
+Para soporte técnico o preguntas:
+
+- Email: soporte@serviz.io
+- Teléfono: +34 900 123 456
+
+---
+
+**Desarrollado con ❤️ para conectar profesionales con clientes**
